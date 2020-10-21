@@ -22,6 +22,8 @@ DirectMemory    直接内存
 
 Xss    设置线程栈大小
 
+![momory model](https://github.com/i6u/JAVA-000/blob/main/Week_01/attach/memory_model.jpg)
+
 ## 参考
 
 [Java 参数文档](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html)
