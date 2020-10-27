@@ -1,3 +1,5 @@
+package org.geekbang;
+
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -17,7 +19,7 @@ public class HelloClassLoader extends ClassLoader {
     protected Class<?> findClass(String name) throws ClassNotFoundException {
         byte[] bytes = new byte[0];
         try {
-            URL resource = HelloClassLoader.class.getResource("Hello.xlass");
+            URL resource = HelloClassLoader.class.getResource("/Hello.xlass");
             bytes = Files.readAllBytes(Paths.get(resource.toURI()));
         } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
