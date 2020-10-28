@@ -2,13 +2,14 @@
 
 ## 交作业
 
-1. GC 总结
-   1.使用 GCLogAnalysis.java 自己演练一遍串行 / 并行 /CMS/G1 的案例。
-   2.使用压测工具（wrk 或 sb），演练 gateway-server-0.0.1-SNAPSHOT.jar 示例。
-   3.根据上述自己对于 1 和 2 的演示，写一段对于不同 GC 的总结，提交到 Github。
+### 作业1： GC 总结
 
-### 命令
-   
+1.使用 GCLogAnalysis.java 自己演练一遍串行 / 并行 /CMS/G1 的案例。
+2.使用压测工具（wrk 或 sb），演练 gateway-server-0.0.1-SNAPSHOT.jar 示例。
+3.根据上述自己对于 1 和 2 的演示，写一段对于不同 GC 的总结，提交到 Github。
+
+命令
+
 ```shell
 # GCLogAnalysis
 java -Xms1g -Xmx1g -XX:+UseSerialGC -Xloggc:seria.gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
@@ -22,16 +23,16 @@ java -Xms1g -Xmx1g -XX:+UseConcMarkSweepGC -Xloggc:cms.gateway.gc.log -XX:+Print
 java -Xms1g -Xmx1g -XX:+UseG1GC -Xloggc:g1.gateway.gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -jar gateway-server-0.0.1-SNAPSHOT.jar
 ```
 
-### 结论
+结论
 
-1. 目前任何时候都不推荐使用串行 GC
-2. 并行 GC 每次 GC 时间相比于 CMS 可能略大（平均中断时间大于 CMS），但 GC 效率总体高于 CMS，适合对延迟要求不高，但对并发要求高的场景
-3. CMS GC 策略复杂，平均每次 GC 时间小于并行 GC ，但 GC 次数大于并行 GC，适合对延迟要求高，但对并发要求不高的场景
-4. G1 GC 配置参数多，GC 响应时间可控，鉴于并行 GC 和 CMS 之间，属于折中的选择
+* 目前任何时候都不推荐使用串行 GC
+* 并行 GC 每次 GC 时间相比于 CMS 可能略大（平均中断时间大于 CMS），但 GC 效率总体高于 CMS，适合对延迟要求不高，但对并发要求高的场景
+* CMS GC 策略复杂，平均每次 GC 时间小于并行 GC ，但 GC 次数大于并行 GC，适合对延迟要求高，但对并发要求不高的场景
+* G1 GC 配置参数多，GC 响应时间可控，鉴于并行 GC 和 CMS 之间，属于折中的选择
 
-2. 使用 OkHttp 访问 http://localhost:8881/
+### 作业2： 使用 OkHttp 访问 <http://localhost:8881/>
 
-
+[OkHttp Example](https://github.com/i6u/JAVA-000/blob/main/Week_02/src/main/java/org/geekbang/Main.java)
 
 ## JVM 核心技术（3）调优分析与面试经验
 
