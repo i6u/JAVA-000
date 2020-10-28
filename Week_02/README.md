@@ -2,9 +2,18 @@
 
 ## JVM 核心技术（3）调优分析与面试经验
 
-### GC 分析
+### GC 日志解讀與分析
 
-GC
+```shell script
+# 打印 GC 詳情
+java -Xloggc:gc.demo.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+# 嘗試不同 GC
+# -XX:+UseSerialGC
+# -XX:+UseParallelGC
+# -XX:+UseConcMarkSweepGC
+# -XX:+UseG1GC
+```
 
 ### JVM 线程堆栈数据分析
 
@@ -82,3 +91,9 @@ pass
 
 1. （可選）運行課上的例子，以及 Netty 的例子，分析相關現象
 2. 寫一段代碼，使用 HttpClient 或者 OkHttp 訪問 localhost:8801,提交代碼到 GitHub
+
+
+## 參考
+
+[G1 GC 參考](https://tech.meituan.com/2016/09/23/g1.html)
+
