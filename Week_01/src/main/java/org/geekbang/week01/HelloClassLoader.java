@@ -1,4 +1,4 @@
-package org.geekbang;
+package org.geekbang.week01;
 
 import java.io.IOException;
 import java.net.URISyntaxException;

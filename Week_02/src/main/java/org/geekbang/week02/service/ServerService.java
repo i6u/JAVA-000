@@ -1,4 +1,4 @@
-package org.geekbang.service;
+package org.geekbang.week02.service;
 
 import java.io.*;
 import java.net.Socket;

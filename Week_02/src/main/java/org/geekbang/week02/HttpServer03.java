@@ -1,29 +1,29 @@
-package org.geekbang;
+package org.geekbang.week02;
 
-import org.geekbang.service.ServerService;
+
+import org.geekbang.week02.service.ServerService;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 /**
- * HttpServer02
+ * HttpServer03
  * <p>
- * 多线程
+ * 线程池
  */
-public class HttpServer02 {
+public class HttpServer03 {
 
     public static void main(String[] args) throws IOException {
-        int port = 8882;
+        int port = 8883;
+        Executor executor = Executors.newFixedThreadPool(40);
         ServerSocket serverSocket = new ServerSocket(port);
         System.out.println("单线程 Port:" + port);
         while (true) {
             Socket socket = serverSocket.accept();
-            new Thread(() -> {
-                ServerService.service(socket);
-            }).start();
+            executor.execute(() -> ServerService.service(socket));
         }
     }
-
-
-} 
+}

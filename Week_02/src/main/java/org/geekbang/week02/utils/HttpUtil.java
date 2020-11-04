@@ -1,4 +1,4 @@
-package org.geekbang.utils;
+package org.geekbang.week02.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

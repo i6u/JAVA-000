@@ -1,6 +1,6 @@
 package org.geekbang;
 
-import org.geekbang.utils.HttpUtil;
+import org.geekbang.week02.utils.HttpUtil;
 
 /**
  * @author :  witt on 2020/10/28 9:08 下午 星期三 :)
