@@ -15,4 +15,11 @@
     <packaging>jar</packaging>
     <name>Week_03</name>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.geekbang</groupId>
+            <artifactId>Week_02</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
