@@ -1,4 +1,4 @@
-package org.geekbang;
+package org.geekbang.week02;
 
 import org.geekbang.week02.utils.HttpUtil;
 

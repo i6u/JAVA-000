@@ -1,7 +1,5 @@
 package org.geekbang.week03;
 
-import org.geekbang.week03.handler.InboundHandler;
-
 import java.io.IOException;
 
 public class ProxyServer {

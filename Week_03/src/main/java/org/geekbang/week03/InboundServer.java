@@ -1,6 +1,5 @@
 package org.geekbang.week03;
 
-import org.geekbang.week03.handler.InboundHandler;
 import org.geekbang.week03.handler.OutboundHandler;
 import org.geekbang.week03.handler.PrintInboundHandler;
 
