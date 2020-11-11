@@ -1,4 +1,4 @@
-package org.geekbang.work4;
+package org.geekbang.week04;
 
 public class SubThread implements Runnable {
 
