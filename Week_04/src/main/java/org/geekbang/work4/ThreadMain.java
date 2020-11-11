@@ -8,12 +8,14 @@ import java.util.concurrent.*;
 public class ThreadMain {
 
     public static void main(String[] args) throws Exception {
-        callableExample();
-        futureTaskExample();
-        joinExample1();
-        joinExample2();
-        joinExample3();
-        countDownLatchExample();
+        //callableExample();
+        //futureTaskExample();
+        //joinExample1();
+        //joinExample2();
+        //joinExample3();
+        //countDownLatchExample();
+        //cyclicBarrierExample();
+        semaphoreExample();
     }
 
     /**
@@ -90,4 +92,45 @@ public class ThreadMain {
         System.out.println(result.toString());
     }
 
+    /**
+     * threadLocal
+     */
+    public static void cyclicBarrierExample() throws InterruptedException, BrokenBarrierException {
+        StringBuilder result = new StringBuilder();
+        final CyclicBarrier cyclicBarrier = new CyclicBarrier(2, Thread.currentThread());
+        Runnable task = () -> {
+            result.append("CyclicBarrier");
+            try {
+                cyclicBarrier.await();
+            } catch (InterruptedException | BrokenBarrierException e) {
+                e.printStackTrace();
+            }
+        };
+        Thread thread = new Thread(task);
+        thread.start();
+        cyclicBarrier.await();
+        System.out.println(result.toString());
+    }
+
+    /**
+     * semaphore
+     */
+    public static void semaphoreExample() throws InterruptedException {
+        int num = 2;
+        Semaphore semaphore = new Semaphore(num);
+        StringBuilder result = new StringBuilder();
+        Runnable task = () -> {
+            try {
+                semaphore.acquire();
+                result.append("semaphore");
+                semaphore.release();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        };
+        Thread thread = new Thread(task);
+        thread.start();
+        while (true) if (semaphore.availablePermits() < num) break;
+        System.out.println(result.toString());
+    }
 }
