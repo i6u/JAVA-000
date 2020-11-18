@@ -16,6 +16,7 @@
 
     <modules>
         <module>homework-spring-bean</module>
+        <module>homework-spring-starter</module>
         <module>homework-spring-jdbc</module>
     </modules>
 

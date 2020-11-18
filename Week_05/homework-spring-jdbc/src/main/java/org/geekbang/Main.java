@@ -1,8 +1,10 @@
 package org.geekbang;
 
+import org.geekbang.db.TestCrudRepository;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("t.");
+        TestCrudRepository repository = new TestCrudRepository();
     }
 }
