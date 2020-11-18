@@ -8,13 +8,13 @@ import java.sql.SQLException;
 
 public class DataSource {
 
-    private static HikariConfig config = new HikariConfig();
-    private static HikariDataSource ds;
+    private static final HikariConfig config = new HikariConfig();
+    private static final HikariDataSource ds;
 
     static {
-        config.setJdbcUrl("jdbc:h2:mem");
-        config.setUsername("t_db");
-        //config.setPassword("database_password");
+        config.setJdbcUrl("jdbc:h2:mem:t_db");
+        config.setUsername("sa");
+        config.setPassword("password");
         config.addDataSourceProperty("cachePrepStmts", "true");
         config.addDataSourceProperty("prepStmtCacheSize", "250");
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
