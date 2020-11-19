@@ -8,21 +8,14 @@ import java.nio.file.Paths;
 
 public class HelloClassLoader extends ClassLoader {
 
-    public static void main(String[] args) throws Exception {
-        HelloClassLoader helloClassLoader = new HelloClassLoader();
-        Class<?> clazz = helloClassLoader.findClass("Hello");
-        Object obj = clazz.getConstructor().newInstance();
-        clazz.getMethod("hello").invoke(obj);
-    }
-
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
-        byte[] bytes = new byte[0];
+        byte[] bytes;
         try {
             URL resource = HelloClassLoader.class.getResource("/Hello.xlass");
             bytes = Files.readAllBytes(Paths.get(resource.toURI()));
         } catch (IOException | URISyntaxException e) {
-            e.printStackTrace();
+            throw new ClassNotFoundException(e.getMessage());
         }
         for (int i = 0; i < bytes.length; i++) {
             bytes[i] = (byte) (255 - bytes[i]);
