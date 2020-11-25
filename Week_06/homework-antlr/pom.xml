@@ -6,17 +6,19 @@
 
     <parent>
         <groupId>org.geekbang</groupId>
-        <artifactId>JAVA-000</artifactId>
+        <artifactId>Week_06</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>Week_06</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>homework-antlr</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-    <modules>
-        <module>homework-google-guava</module>
-        <module>homework-antlr</module>
-    </modules>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4-runtime</artifactId>
+            <version>4.8-1</version>
+        </dependency>
+    </dependencies>
 </project>
